@@ -1,0 +1,28 @@
+Terms of Service for Hermes
+Last updated: 2026-08-06
+
+These Terms of Service govern the use of Hermes, a private social media assistant used to help create, organize, and manage social media content for platforms such as TikTok and Instagram.
+
+1. Purpose of the service
+Hermes is used to support content workflows, including drafting captions, preparing post ideas, organizing media, and assisting with publishing or scheduling content when the account owner explicitly authorizes access.
+
+2. Account authorization
+Hermes may connect to third-party platforms such as TikTok through official authorization flows. The account owner controls whether access is granted or revoked. Hermes does not request or store platform passwords.
+
+3. User responsibility
+The account owner remains responsible for all content reviewed, approved, published, or scheduled through Hermes. Public posts, comments, direct messages, or other actions should only be completed after explicit approval by the account owner.
+
+4. Acceptable use
+Hermes must not be used to publish unlawful, misleading, harmful, infringing, abusive, or platform-policy-violating content. Use of Hermes must comply with the terms and community guidelines of TikTok, Instagram, and any other connected services.
+
+5. Third-party services
+Hermes may rely on third-party services such as TikTok, Instagram, Composio, Notion, hosting providers, or automation tools. These services have their own terms, privacy policies, availability, and limitations.
+
+6. No guarantees
+Hermes is provided for private workflow support. No guarantee is made that the service will be uninterrupted, error-free, or accepted by any third-party platform review process.
+
+7. Changes
+These Terms may be updated from time to time. The latest version will be available on this page.
+
+8. Contact
+For questions about these Terms, contact the owner/operator of the Hermes workflow through the channel where access was granted or requested.

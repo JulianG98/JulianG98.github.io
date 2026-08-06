@@ -1,0 +1,41 @@
+Privacy Policy for Hermes
+Last updated: 2026-08-06
+
+This Privacy Policy explains how Hermes, a private social media assistant, handles information when connected to platforms such as TikTok or Instagram.
+
+1. Information processed
+Depending on the permissions granted by the account owner, Hermes may process limited account and content information, such as:
+- basic profile information, such as username, display name, and profile image;
+- content metadata, such as posts, captions, media IDs, status, timestamps, or analytics where permission is granted;
+- media files, captions, hashtags, scripts, and content ideas provided by the account owner;
+- authorization tokens provided through official OAuth flows.
+
+Hermes does not ask for or store TikTok, Instagram, or other platform passwords.
+
+2. How information is used
+Information is used only to provide the requested workflow support, such as:
+- creating and organizing social media content;
+- preparing drafts, captions, scripts, and hashtags;
+- helping schedule, publish, or manage posts after approval;
+- checking whether authorized integrations are connected and working.
+
+3. Sharing of information
+Information may be shared only with services necessary to operate the workflow, such as TikTok, Instagram, Composio, Notion, hosting providers, or automation tools. Information is not sold.
+
+4. Data storage
+Content and workflow information may be stored in connected tools used by the account owner, such as Notion or automation platforms. OAuth tokens may be stored by the authorized integration provider to maintain the connection.
+
+5. Data deletion and revocation
+The account owner can revoke platform access at any time through the relevant platform settings or integration dashboard. Deleting or disconnecting the integration will stop future access. Stored workflow content can be deleted from the connected tools where it is stored.
+
+6. Security
+Reasonable care is taken to avoid exposing credentials or secrets. Client secrets, access tokens, and passwords should never be shared publicly or sent through chat messages.
+
+7. Children
+Hermes is not intended for use by children or for collecting personal information from children.
+
+8. Changes
+This Privacy Policy may be updated from time to time. The latest version will be available on this page.
+
+9. Contact
+For privacy questions or deletion requests, contact the owner/operator of the Hermes workflow through the channel where access was granted or requested.
