@@ -48,8 +48,8 @@
       <footer><span>BEAST OS v0.1 · Operator Cockpit</span><span>Letzter Sync: heute, 06:30 · Garmin + FDDB</span></footer>
     </main>
   </div>
-  <div class="modal-backdrop" id="workoutModal" aria-hidden="true"><section class="modal card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" onclick="closeWorkout()">×</button><div class="card-label">LIVE TRAINING LOG</div><h2 id="modalTitle">Upper Volume</h2><p class="muted">Logge jeden Satz direkt. Die nächste Progression wird automatisch berechnet.</p><div id="logRows" class="log-rows"></div><div class="modal-actions"><button class="secondary" onclick="closeWorkout()">Später</button><button class="primary" onclick="saveWorkout()">Training speichern <span>✓</span></button></div></section></div>
+  <div class="modal-backdrop" id="workoutModal" aria-hidden="true"><section class="modal logger-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="logger-top"><button class="modal-close" onclick="closeWorkout()">⌄</button><div class="timer" id="workoutTimer">00:00:00</div><button class="finish-btn" onclick="saveWorkout()">→</button></div><input class="workout-note" placeholder="Deine Trainingsnotizen..." aria-label="Trainingsnotizen"><div class="logger-heading"><div><div class="card-label">LIVE TRAINING</div><h2 id="modalTitle">Upper Volume</h2></div><span class="logger-status">● AKTIV</span></div><div id="logRows" class="log-rows"></div><button class="add-exercise" onclick="addExerciseCard()">＋ Übung</button></section></div>
   <div class="toast" id="toast"></div>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
