@@ -17,14 +17,24 @@ const oneOffExercises=[
  {id:'triceps',n:'08',name:'Trizepsdrücken am Kabel',target:'3 × 12',sets:3,weight:0,reps:12,result:'Alternative: Überkopfstrecken'},
  {id:'burpees',n:'09',name:'Burpees · Abschluss',target:'4 × 8 · sauber, nicht all-out',sets:4,weight:0,reps:8,result:'60–90 Sek Pause'}
 ];
+const upperHeavyExercises=[
+ {id:'pullups',n:'01',name:'Weighted Pull-ups',target:'5 × 3–6 · +15 kg Ziel 4/4/4/4/4',sets:5,weight:15,reps:4,result:'3 min Pause'},
+ {id:'row',n:'02',name:'Rudern / Chest Supported Row / Kabelrudern',target:'4 × 6–10 · schwer sauber',sets:4,weight:0,reps:8,result:'2 min Pause'},
+ {id:'bench',n:'03',name:'Bankdrücken oder Weighted Dips',target:'5 × 3–6 · schwer',sets:5,weight:0,reps:4,result:'3 min Pause'},
+ {id:'press',n:'04',name:'Dips / Incline DB Press',target:'3 × 6–10 · moderat-schwer',sets:3,weight:0,reps:8,result:'2 min Pause'},
+ {id:'lateral_raise',n:'05',name:'Seitheben',target:'4 × 12–25 · Pump',sets:4,weight:0,reps:15,result:'60–90 Sek Pause'},
+ {id:'rear_delts',n:'06',name:'Rear Delts / Face Pull',target:'3 × 15–25 · sauber',sets:3,weight:0,reps:20,result:'60–90 Sek Pause'},
+ {id:'curls',n:'07',name:'Bizeps Curl',target:'3 × 6–10 · schwer sauber',sets:3,weight:0,reps:8,result:'90 Sek Pause'},
+ {id:'triceps',n:'08',name:'Trizeps Pushdown',target:'3 × 8–12 · sauber',sets:3,weight:0,reps:10,result:'90 Sek Pause'}
+];
 const localDateCH=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Zurich',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-const isOneOffSession=localDateCH==='2026-11-15';
-const exercises=isOneOffSession?oneOffExercises:standardExercises;
-const workoutTitle=isOneOffSession?'Funktionale Kraft · Einmalig':'Hill Sprints + Core/Arme leicht';
+const isOneOffSession=localDateCH==='2026-11-16';
+const exercises=isOneOffSession?upperHeavyExercises:standardExercises;
+const workoutTitle=isOneOffSession?'Upper Heavy':'Hill Sprints + Core/Arme leicht';
 const list=document.querySelector('#exerciseList');const saved=JSON.parse(localStorage.getItem('beastLogs')||'[]');
 function renderPlan(full=false){const visible=isOneOffSession?exercises.length:4;list.innerHTML=exercises.slice(0,full?exercises.length:visible).map((e,i)=>`<div class="exercise"><span class="ex-num">${e.n}</span><div><strong>${e.name}</strong><small>${e.target}</small></div><span class="target">${e.result}</span></div>`).join('')}
 renderPlan();
-if(isOneOffSession){document.querySelector('.mission-card h2').textContent=workoutTitle;document.querySelector('.training-card h3').textContent=workoutTitle;document.querySelector('#modalTitle').textContent=workoutTitle;document.querySelector('.mission-card .pill').textContent='FUNKTIONALE KRAFT';document.querySelector('.topbar .eyebrow').textContent='SONNTAG · 15. NOVEMBER 2026 · EINMALIG';document.querySelector('.mission-card .muted').textContent='Klimmzüge · Dips · Rotation · Burpees'}
+if(isOneOffSession){const weekday=new Intl.DateTimeFormat('de-CH',{timeZone:'Europe/Zurich',weekday:'long'}).format(new Date()).toLocaleUpperCase('de-CH');const dateLabel=new Intl.DateTimeFormat('de-CH',{timeZone:'Europe/Zurich',day:'2-digit',month:'long',year:'numeric'}).format(new Date()).toLocaleUpperCase('de-CH');document.querySelector('.mission-card h2').textContent=workoutTitle;document.querySelector('.training-card h3').textContent=workoutTitle;document.querySelector('#modalTitle').textContent=workoutTitle;document.querySelector('.mission-card .pill').textContent='UPPER HEAVY';document.querySelector('.topbar .eyebrow').textContent=`${weekday} · ${dateLabel}`;document.querySelector('.mission-card .muted').textContent='Schwere Grundübungen · Rücken/Brust · Schulter/Arme'}
 function fmtHours(seconds){return seconds?`${Math.floor(seconds/3600)}:${String(Math.round((seconds%3600)/60)).padStart(2,'0')}`:'—'}
 async function loadLiveData(){try{const r=await fetch('/api/dashboard',{cache:'no-store'});if(!r.ok)throw Error('sync');const d=await r.json(),g=d.garmin||{},s=g.sleep||{},rec=g.recovery||{};if(s.seconds)document.querySelector('.sleep-total strong').textContent=fmtHours(s.seconds);if(s.score)document.querySelector('.readiness-stats strong').innerHTML=`${s.score} <small>${s.qualifier==='EXCELLENT'?'EXCELLENT':'SYNCED'}</small>`;if(rec.restingHr)document.querySelectorAll('.readiness-stats strong')[2].textContent=`${rec.restingHr} bpm`;const badge=document.querySelector('.live-badge');if(badge){badge.innerHTML='<i></i> LIVE SYNC';badge.title=`Garmin: ${g.ok?'verbunden':'nicht verfügbar'} · ${d.updatedAt}`}showToast(g.ok?'Garmin + FDDB synchronisiert':'Offline-Snapshot geladen')}catch(e){showToast('Offline-Modus · letzter Snapshot wird genutzt')}}
 async function loadProgression(){try{const d=await (await fetch('/api/progression',{cache:'no-store'})).json(),t=d.targets||[];if(t.length)document.querySelectorAll('.progress-row')[0].querySelector('b').textContent=t[0].next}catch(e){}}
